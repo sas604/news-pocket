@@ -97,7 +97,7 @@ function App() {
     fetch(uri, {
       method: "GET",
       headers: {
-        "Ocp-Apim-Subscription-Key": REACT_APP_API_KEY,
+        "Ocp-Apim-Subscription-Key": process.env.REACT_APP_API_KEY,
         "Accept-Language": "en",
       },
     })
