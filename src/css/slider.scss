@@ -1,0 +1,90 @@
+@import "./var";
+$track-color: $dark;
+$thumb-color: $orange;
+
+$thumb-radius: 30px;
+$thumb-height: 50px;
+$thumb-width: 50px;
+$thumb-shadow-size: 4px;
+$thumb-shadow-blur: 4px;
+$thumb-shadow-color: rgba(0, 0, 0, 0.2);
+$thumb-border-width: 3px;
+$thumb-border-color: $dark;
+
+$track-width: 60%;
+$track-height: 16px;
+$track-shadow-size: 1px;
+$track-shadow-blur: 1px;
+$track-shadow-color: rgba(0, 0, 0, 0.2);
+$track-border-width: 2px;
+$track-border-color: darken($dark, 5);
+@import "~input-range-scss/_inputrange.scss";
+
+.slider {
+  position: absolute;
+  top: 7rem;
+  height: 7rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0.5rem;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  span {
+    color: $white;
+    font-size: 1.5rem;
+    @include sans;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 35px;
+    background-color: $dark;
+    border-radius: 20px;
+    transition: all 0.3s;
+    margin: 1rem 0.5rem 0;
+    @media (min-width: 680px) {
+      margin-left: -70px;
+    }
+  }
+  .switch::after {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: $orange;
+    top: 1px;
+    left: 1px;
+    transition: all 0.3s;
+  }
+
+  .checkbox:checked + .switch::after {
+    left: 35px;
+  }
+  .checkbox:checked + .switch {
+    background-color: $dark-orange;
+  }
+  .checkbox {
+    display: none;
+  }
+
+  input[type="range"] {
+    min-width: 200px;
+  }
+
+  .view-wraper {
+    width: 100%;
+  }
+  span.view {
+    color: $orange;
+    width: 80px;
+    display: inline-block;
+    text-transform: capitalize;
+  }
+  p {
+    color: $white;
+    width: 100%;
+  }
+}

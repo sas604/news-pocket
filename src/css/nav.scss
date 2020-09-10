@@ -1,0 +1,55 @@
+@import "./var";
+
+.nav-btn {
+  position: fixed;
+  border: none;
+  color: $orange;
+  font-size: 3rem;
+  line-height: 3rem;
+  z-index: 7;
+}
+
+nav {
+  -webkit-overflow-scrolling: touch;
+
+  background-color: rgba($dark, 0.95);
+  min-height: 100vh;
+  position: fixed;
+  z-index: 5;
+  width: 80%;
+  max-width: 300px;
+  transition: 0.3s;
+  color: $orange;
+  padding: 4.5rem 0.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  h3 {
+    color: $white;
+    margin-bottom: 1rem;
+  }
+  button {
+    @include btn;
+  }
+  //search
+}
+
+.search-form {
+  border-bottom: 1px solid $white;
+  padding: 2rem 0;
+  margin-bottom: 1rem;
+  input.search-field {
+    background-color: $dark;
+    border: 3px solid $orange;
+    color: $orange;
+    height: 50px;
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .submit-btn {
+    margin-left: 0.5rem;
+  }
+  .submit-btn input[type="submit"] {
+    display: none;
+  }
+}

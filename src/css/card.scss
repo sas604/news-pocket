@@ -1,0 +1,77 @@
+@import "./var.scss";
+
+.news-card {
+  background-image: url(../image-regular.svg);
+  background-size: 20%;
+  background-repeat: no-repeat;
+  background-position-y: 2rem;
+  background-position-x: center;
+  background-color: rgba($white, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  // border: 7px solid $dark;
+
+  width: 100%;
+  height: 550px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 1rem 1rem;
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.5),
+    inset 0px 0px 10px 0px rgba(0, 0, 0, 0.33);
+  @media (min-width: 500px) {
+    width: 300px;
+  }
+
+  h2 {
+    @include sans;
+    line-height: 1;
+    color: $orange;
+    padding: 0 0.5rem;
+  }
+  p {
+    color: $white;
+    padding: 0 0.5rem;
+    max-height: 25%;
+    overflow: hidden;
+  }
+}
+.header-link {
+  height: 30%;
+  text-indent: -999999999999999999px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+.bottom-wraper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  place-self: flex-end;
+  align-items: center;
+  padding: 0 0.5rem 1rem;
+
+  svg {
+    font-size: 2rem;
+    color: $orange;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+.source {
+  display: flex;
+  align-items: center;
+  img {
+    background-color: $white;
+    border-radius: 5px;
+  }
+  h5 {
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+    color: $white;
+  }
+}
