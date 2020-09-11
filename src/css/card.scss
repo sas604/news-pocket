@@ -75,3 +75,18 @@
     color: $white;
   }
 }
+.card-animation-appear {
+  position: relative;
+  right: -150px;
+  opacity: 0;
+}
+.card-animation-appear-active {
+  opacity: 1;
+  right: 0;
+  transition: opacity 500ms ease-in, right 500ms ease-in;
+}
+
+.card-animation-active {
+  opacity: 0;
+  transition: opacity 20000ms;
+}
