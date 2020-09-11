@@ -3,6 +3,7 @@ import Card from "./Card";
 import Slider from "./Slider";
 import { filteredSources } from "../functions";
 import "../css/news-container.scss";
+import Loader from "react-loader-spinner";
 
 export default function NewsContainer({
   data,
@@ -46,7 +47,19 @@ export default function NewsContainer({
   const listitems = filtredData.map((el) => (
     <Card key={el.id} news={el} onClick={selectCard} pocket={pocket} />
   ));
-  if (loading) return <h1>loading</h1>;
+  if (loading)
+    return (
+      <div
+        style={{
+          position: "absolute",
+          top: "50vh",
+          left: "39vw",
+          zIndex: 9999,
+        }}
+      >
+        <Loader type="ThreeDots" color="orange" height={80} width={80} />
+      </div>
+    );
   if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
   if (!data) return null;
   return (
