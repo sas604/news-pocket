@@ -20,7 +20,11 @@ export default function Card({ news, onClick, pocket }) {
         >
           {news.name}
         </a>
-      ) : null}
+      ) : (
+        <a className="header-link" href={news.url}>
+          {news.name}
+        </a>
+      )}
       <a href={news.url}>
         <h2>{news.name}</h2>
       </a>
